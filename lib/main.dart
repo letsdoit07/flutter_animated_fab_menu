@@ -70,7 +70,15 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
                 right: 30,
                 bottom: 30,
                 child: Stack(
+              alignment: Alignment.bottomRight,
               children: <Widget>[
+                IgnorePointer(
+                    child: Container(
+                    color: Colors.black.withOpacity(0.5), // comment or change to transparent color
+                    height: 150.0,
+                    width: 150.0,
+                  ),
+                ),
                 Transform.translate(
                   offset: Offset.fromDirection(getRadiansFromDegree(270),degOneTranslationAnimation.value * 100),
                   child: Transform(
@@ -85,7 +93,7 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
                         color: Colors.white,
                       ),
                       onClick: (){
-
+                        print('First Button');
                       },
                     ),
                   ),
@@ -104,7 +112,7 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
                         color: Colors.white,
                       ),
                       onClick: (){
-
+                        print('Second button');
                       },
                     ),
                   ),
@@ -123,7 +131,7 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
                         color: Colors.white,
                       ),
                       onClick: (){
-
+                        print('Third Button');
                       },
                     ),
                   ),
