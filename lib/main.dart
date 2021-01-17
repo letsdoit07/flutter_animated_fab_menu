@@ -33,6 +33,12 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
   }
 
   @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
+  }
+
+  @override
   void initState() {
     animationController = AnimationController(vsync: this,duration: Duration(milliseconds: 250));
     degOneTranslationAnimation = TweenSequence([
@@ -74,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
               children: <Widget>[
                 IgnorePointer(
                     child: Container(
-                    color: Colors.black.withOpacity(0.5), // comment or change to transparent color
+                    color: Colors.transparent,
                     height: 150.0,
                     width: 150.0,
                   ),
